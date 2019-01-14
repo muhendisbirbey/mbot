@@ -72,6 +72,9 @@ client.on('guildMemberAdd', member => {
 
 const Discord = require('discord.js');
 const bot = new Discord.Client();
+
+const prefix = '!';
+
 bot.on('message', message => {
 
     // Variables - Variables make it easy to call things, since it requires less typing.
