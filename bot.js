@@ -2,11 +2,37 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const moment = require('moment');
 
+
+
+
 client.on('ready', () => {
   client.user.setGame('Çalışmalar devam ediyor. Twitch kanalımıza gitmek için İZLE butonuna basabilirsin :) ', 'https://www.twitch.tv/muhendisbeymuhendishanim')
 });
 
+const prefix = '!';
+
 client.on('message', msg => {
+	
+	let msg = message.content.toUpperCase();
+	let sender = message.author;
+	let cont = message.content.slice(prefix.length).split(" ");
+	let args = cont.slice(1);
+	
+	 
+	if(msg.startsWith(prefix + 'sil')){
+		
+		 async function purge() { message.delete();
+					 const fetched = await message.channel.fetchMessages({limit: args[0]});
+					 
+					 message.channel.bulkDelete(fetched)
+.catch(error => message.channel.send('hata : ${error}'));
+					
+	
+		purge();
+					}
+);
+		
+		
   if (msg.content === 'sa') {
     msg.reply('Aleyküm Selam hoşgeldin');
   }
@@ -65,6 +91,7 @@ client.on('guildMemberAdd', member => {
 client.on('guildMemberAdd', member => {
    member.send(' Discord sunucumuza hoşgeldin. Sunucudaki diğer odaları görebilmek için #rol-secimi kanalından rollerini alabilirsin.  Ayrıca #kurallar-kanaladavet kanalından sunucu kurallarını okumayı da unutma :slight_smile:  İyi eğlenceler :heart: ');
 });
+
 
 
 
