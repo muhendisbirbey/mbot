@@ -1,4 +1,4 @@
-const Discord = require('discord.js');
+/*const Discord = require('discord.js');
 const client = new Discord.Client();
 const moment = require('moment');
 
@@ -67,9 +67,11 @@ client.on('guildMemberAdd', member => {
    member.send(' Discord sunucumuza hoşgeldin. Sunucudaki diğer odaları görebilmek için #rol-secimi kanalından rollerini alabilirsin.  Ayrıca #kurallar-kanaladavet kanalından sunucu kurallarını okumayı da unutma :slight_smile:  İyi eğlenceler :heart: ');
 });
 
+*/
 ///////////////////////////////////////////////////////////////////////////
 
-
+const Discord = require('discord.js');
+const bot = new Discord.Client();
 bot.on('message', message => {
 
     // Variables - Variables make it easy to call things, since it requires less typing.
@@ -135,4 +137,6 @@ bot.on('ready', () => {
 
 ///////////////////////
 
-client.login(process.env.BOT_TOKEN);
+/* client.login(process.env.BOT_TOKEN); */
+
+bot.login(process.env.BOT_TOKEN);
