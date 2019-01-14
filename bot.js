@@ -3,13 +3,13 @@ const client = new Discord.Client();
 const moment = require('moment');
 
 
-
+const prefix = '!';
 
 client.on('ready', () => {
   client.user.setGame('Çalışmalar devam ediyor. Twitch kanalımıza gitmek için İZLE butonuna basabilirsin :) ', 'https://www.twitch.tv/muhendisbeymuhendishanim')
 });
 
-const prefix = '!';
+
 
 client.on('message', msg => {
 	
