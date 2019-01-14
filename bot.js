@@ -1,25 +1,25 @@
-/*const Discord = require('discord.js');
-const client = new Discord.Client();
+const Discord = require('discord.js');
+const bot = new Discord.Client();
 const moment = require('moment');
 
-const prefix = '~';
+const prefix = '!';
 
-client.on('ready', () => 
-	  {client.user.setGame('Çalışmalar devam ediyor. Twitch kanalımıza gitmek için İZLE butonuna basabilirsin :) ', 'https://www.twitch.tv/muhendisbeymuhendishanim')});
-	client.on('message', msg => {	
+bot.on('ready', () => 
+	  {bot.user.setGame('Çalışmalar devam ediyor. Twitch kanalımıza gitmek için İZLE butonuna basabilirsin :) ', 'https://www.twitch.tv/muhendisbeymuhendishanim')});
+	bot.on('message', msg => {	
   if (msg.content === 'sa') {
     msg.reply('Aleyküm Selam hoşgeldin');
   }
 
 });
 
-client.on('message', msg => {
+bot.on('message', msg => {
   if (msg.content === 'Sa') {
     msg.reply('Aleyküm Selam hoşgeldin');
   }
 });
 
-client.on('message', message => {
+bot.on('message', message => {
   // If the message is "what is my avatar"
   if (message.content === 'avatarım') {
     // Send the user's avatar URL
@@ -27,7 +27,7 @@ client.on('message', message => {
   }
 });
 
-client.on('message', message => {
+bot.on('message', message => {
   // If the message is "what is my avatar"
   
   guildMember = message.member;
@@ -54,7 +54,7 @@ joinSince = 'Sunucumuza ' + moment(new Date()).diff(guildMember.joinedAt, 'days'
 
 
 
-client.on('guildMemberAdd', member => {
+bot.on('guildMemberAdd', member => {
   // Send the message to a designated channel on a server:
   const channel = member.guild.channels.find(ch => ch.name === 'hoş-geldiniz-🎀');
   // Do nothing if the channel wasn't found on this server
@@ -63,17 +63,16 @@ client.on('guildMemberAdd', member => {
   channel.send(`Discord sunucumuza hoşgeldin. Sunucudaki diğer odaları görebilmek için <#440947896280416276> kanalından rollerini alabilirsin.  Ayrıca <#397696480988758017> kanalından sunucu kurallarını okumayı da unutma :slight_smile:  İyi eğlenceler :heart:   ${member}      `);
 });
 
-client.on('guildMemberAdd', member => {
+bot.on('guildMemberAdd', member => {
    member.send(' Discord sunucumuza hoşgeldin. Sunucudaki diğer odaları görebilmek için #rol-secimi kanalından rollerini alabilirsin.  Ayrıca #kurallar-kanaladavet kanalından sunucu kurallarını okumayı da unutma :slight_smile:  İyi eğlenceler :heart: ');
 });
 
-*/
+
 ///////////////////////////////////////////////////////////////////////////
 
-const Discord = require('discord.js');
-const bot = new Discord.Client();
 
-const prefix = '!';
+
+
 
 bot.on('message', message => {
 
@@ -95,21 +94,21 @@ bot.on('message', message => {
 
 
     // Purge
-    if (msg.startsWith(prefix + 'PURGE')) { // This time we have to use startsWith, since we will be adding a number to the end of the command.
+    if (msg.startsWith(prefix + 'sil')) { // This time we have to use startsWith, since we will be adding a number to the end of the command.
         // We have to wrap this in an async since awaits only work in them.
         async function purge() {
             message.delete(); // Let's delete the command message, so it doesn't interfere with the messages we are going to delete.
 
             // Now, we want to check if the user has the `bot-commander` role, you can change this to whatever you want.
-            if (!message.member.roles.find("name", "bot-commander")) { // This checks to see if they DONT have it, the "!" inverts the true/false
-                message.channel.send('You need the \`bot-commander\` role to use this command.'); // This tells the user in chat that they need the role.
+            if (!message.member.roles.find("name", "MÜHENDİSLER")) { // This checks to see if they DONT have it, the "!" inverts the true/false
+                message.channel.send('Bu komutu kullanacak yetkiye sahip değilsiniz!'); // This tells the user in chat that they need the role.
                 return; // this returns the code, so the rest doesn't run.
             }
 
             // We want to check if the argument is a number
             if (isNaN(args[0])) {
                 // Sends a message to the channel.
-                message.channel.send('Please use a number as your arguments. \n Usage: ' + prefix + 'purge <amount>'); //\n means new line.
+                message.channel.send('Lütfen sayı giriniz. \n Kullanım şekli: ' + prefix + 'sil <silinecek mesaj miktarı>'); //\n means new line.
                 // Cancels out of the script, so the rest doesn't run.
                 return;
             }
@@ -138,8 +137,5 @@ bot.on('ready', () => {
 });
 
 
-///////////////////////
-
-/* client.login(process.env.BOT_TOKEN); */
 
 bot.login(process.env.BOT_TOKEN);
