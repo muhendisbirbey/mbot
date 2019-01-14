@@ -94,7 +94,7 @@ bot.on('message', message => {
 
 
     // Purge
-    if (msg.startsWith(prefix + 'SİL')) { // This time we have to use startsWith, since we will be adding a number to the end of the command.
+    if (msg.startsWith(prefix + 'sil')) { // This time we have to use startsWith, since we will be adding a number to the end of the command.
         // We have to wrap this in an async since awaits only work in them.
         async function purge() {
             message.delete(); // Let's delete the command message, so it doesn't interfere with the messages we are going to delete.
