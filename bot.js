@@ -11,26 +11,7 @@ client.on('ready', () => {
 
 
 
-client.on('message', msg => {
-	
-	let msg = message.content.toUpperCase();
-	let sender = message.author;
-	let cont = message.content.slice(prefix.length).split(" ");
-	let args = cont.slice(1);
-	
-	 
-	if(msg.startsWith(prefix + 'sil')){
-		
-		 async function purge() { message.delete();
-					 const fetched = await message.channel.fetchMessages({limit: args[0]});
-					 
-					 message.channel.bulkDelete(fetched)
-.catch(error => message.channel.send('hata : ${error}'));
-					
-	
-		purge();
-					}
-);
+
 		
 		
   if (msg.content === 'sa') {
