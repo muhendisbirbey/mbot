@@ -7,35 +7,12 @@ const prefix = '!';
 bot.on('ready', () => 
 	  {bot.user.setGame('Çalışmalar devam ediyor. Twitch kanalımıza gitmek için İZLE butonuna basabilirsin :) ', 'https://www.twitch.tv/muhendisbeymuhendishanim')});
 	bot.on('message', msg => {	
-  if (msg.content === 'sa') {
+  if (msg.content === 'sa' | 'Sa' | 'selamlar' | 'sea' | 'Sea' |'Selam' | 'selam' | 'Selamlar') {
     msg.reply('Aleyküm Selam hoşgeldin');
   }
 
 });
 
-bot.on('message', msg => {
-  if (msg.content === 'Sa') {
-    msg.reply('Aleyküm Selam hoşgeldin');
-  }
-});
-
-bot.on('message', msg => {
-  if (msg.content === 'selamlar' | 'sea' ) {
-    msg.reply('Aleyküm Selam hoşgeldin');
-  }
-});
-
- /*bot.on('message', msg => {
-  if (msg.content === 'sea') {
-    msg.reply('Aleyküm Selam hoşgeldin');
-  }
-}); */
-
-bot.on('message', msg => {
-  if (msg.content === 'Sea') {
-    msg.reply('Aleyküm Selam hoşgeldin');
-  }
-});
 
 bot.on('message', message => {
   // If the message is "what is my avatar"
@@ -44,12 +21,12 @@ bot.on('message', message => {
     message.reply(message.author.avatarURL);
   }
 });
-
+/*
 bot.on('message', message => {
-  // If the message is "what is my avatar"
+
   
   guildMember = message.member;
-  if (message.content === 'bilgilerim') {
+  if (message.content === 'bilgilerim' ) {
     // Send the user's avatar URL
    
  
@@ -65,6 +42,31 @@ joinSince = 'Sunucumuza ' + moment(new Date()).diff(guildMember.joinedAt, 'days'
    
 
   }
+}); */
+
+bot.on('message', message => {
+	
+  guildMember = message.member;
+  const channel = member.guild.channels.find(ch => ch.name === 'hoş-geldiniz-🎀');
+	
+if (message.content === 'bilgilerim' ) {
+ 
+  if (!channel) return;
+  // Send the message, mentioning the member
+  userID = 'Kullanıcı ID : ' + guildMember.id + '\n'; 
+    joinDiscord = 'Hesap oluşturma tarihi : ' + guildMember.user.createdAt + '\n'  ;
+   joinServer = 'Sunucuya giriş tarihi : ' + guildMember.joinedAt + '\n';
+	  
+creatSince = 'Hesabınızı ' + moment(new Date()).diff(guildMember.user.createdAt, 'days') + ' gün önce oluşturdunuz ';
+joinSince = 'Sunucumuza ' + moment(new Date()).diff(guildMember.joinedAt, 'days') + ' gün önce katıldınız \n';
+
+	  
+    message.reply(' ``` \n'+ userID + joinDiscord + joinServer + creatSince + joinSince + ' ```' );
+}
+});
+
+bot.on('guildMemberAdd', member => {
+   member.send(' Discord sunucumuza hoşgeldin. Sunucudaki diğer odaları görebilmek için #rol-secimi kanalından rollerini alabilirsin.  Ayrıca #kurallar-kanaladavet kanalından sunucu kurallarını okumayı da unutma :slight_smile:  İyi eğlenceler :heart: ');
 });
 
 
