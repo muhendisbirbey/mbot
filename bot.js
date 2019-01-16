@@ -8,7 +8,7 @@ bot.on('ready', () =>
 	  {bot.user.setGame('Çalışmalar devam ediyor. Twitch kanalımıza gitmek için İZLE butonuna basabilirsin :) ', 'https://www.twitch.tv/muhendisbeymuhendishanim')});
 	
 bot.on('message', msg => {	
-  if (msg.content === 'sa' | 'Sa' | 'selamlar' | 'sea' | 'Sea' |'Selam' | 'selam' | 'Selamlar') {
+  if (msg.content === 'sa' | 'Sa')/* | 'selamlar' | 'sea' | 'Sea' |'Selam' | 'selam' | 'Selamlar') */{
     msg.reply('Aleyküm Selam hoşgeldin');
   }
 
@@ -17,7 +17,7 @@ bot.on('message', msg => {
 
 bot.on('message', message => {
   // If the message is "what is my avatar"
-  if (message.content === 'avatarım') {
+  if (message.content === prefix + 'avatarım') {
     // Send the user's avatar URL
     message.reply(message.author.avatarURL);
   }
@@ -29,6 +29,8 @@ bot.on('message', message => {
   
   guildMember = message.member;
   if (message.content === prefix + 'bilgilerim' ) {
+
+const channel = member.guild.channels.find(ch => ch.name === 'botchat');
 	  
 	  
   
@@ -40,7 +42,8 @@ creatSince = 'Hesabınızı ' + moment(new Date()).diff(guildMember.user.created
 joinSince = 'Sunucumuza ' + moment(new Date()).diff(guildMember.joinedAt, 'days') + ' gün önce katıldınız \n';
 
 	  
-   message.reply(' ``` \n'+ userID + joinDiscord + joinServer + creatSince + joinSince + ' ```' );
+   ///message.reply
+channel.send(' ``` \n'+ userID + joinDiscord + joinServer + creatSince + joinSince + ' ```' );
    
 
   }
