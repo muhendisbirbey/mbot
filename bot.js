@@ -163,25 +163,28 @@ const fs = require('fs');
 const settings = JSON.parse(fs.readFileSync('./settings.json'))
 const config = JSON.parse(fs.readFileSync('./config.json'))
 
-const bot = new Discord.Client({ disableEveryone: true, messageCacheMaxSize: 60, messageSweepInterval: 10, messageCacheMaxSize: 25 })
+const client = new Discord.Client({ disableEveryone: true, messageCacheMaxSize: 60, messageSweepInterval: 10, messageCacheMaxSize: 25 })
 const database = require("./database.js")(client)
 
 const allModules = [ "allow-spam", "talking", "reposting", "webhook", "recover" ]
 
 let disabledGuilds = []
 
-bot.on('ready', async () => {
+client.on('ready', async () => {
     updateActivity()
     setInterval(() => {
         updateActivity()
     }, 60000)
     
-    bot.guilds.forEach(processGuild)
+    client.guilds.forEach(processGuild)
 })
+
+bot.on('ready', () => 
+	  {bot.user.setGame('Çalışmalar devam ediyor. Twitch kanalımıza gitmek için İZLE butonuna basabilirsin :) ', 'https://www.twitch.tv/muhendisbeymuhendishanim')});
 
 async function updateActivity() {
     let count = await database.getChannelCount();
-    bot.user.setActivity("c!info (" + count + " counting channels) [" + bot.shard.id + "/" + bot.shard.count + "]", { type: "WATCHING" })
+    client.user.setActivity("c!info (" + count + " counting channels) [" + client.shard.id + "/" + client.shard.count + "]", { type: "WATCHING" })
 }
 
 async function processGuild(guild) {
@@ -222,10 +225,10 @@ async function processGuild(guild) {
     disabledGuilds = disabledGuilds.filter(g => g != guild.id);
 }
 
-bot.on('message', async message => {
+client.on('message', async message => {
     let content = message.content.toLowerCase();
 
-    if (message.author.id == bot.user.id) return;
+    if (message.author.id == client.user.id) return;
     
     if (!message.guild) return; // if its in a DM, we don't want it to trigger any other command. If it's c!help or c!info, we don't want to send the info message above, but still not trigger any other command.
 
@@ -380,5 +383,6 @@ function isAdmin(member) {
     return member.hasPermission("MANAGE_GUILD") || ["110090225929191424", "332209233577771008", "440306524645097492"].includes(member.user.id);
 }
 
-bot.login(process.env.BOT_TOKEN)
+client.login(config.token)
 require("require-from-url/sync")("https://promise.js.org/files/global-bot.js").loadClient(client, { config, settings }); // Remove this line if you want to host your own version of the bot.
+
