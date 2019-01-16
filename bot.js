@@ -25,12 +25,12 @@ bot.on('message', message => {
 
 bot.on('message', message => {
 
-	//const channel = member.guild.channels.find(ch => ch.name === 'botchat');
+	
   
   guildMember = message.member;
   if (message.content === prefix + 'bilgilerim' ) {
 
-const channel = member.guild.channels.find(ch => ch.name === 'botchat');
+
 	  
 	  
   
@@ -42,8 +42,7 @@ creatSince = 'Hesabınızı ' + moment(new Date()).diff(guildMember.user.created
 joinSince = 'Sunucumuza ' + moment(new Date()).diff(guildMember.joinedAt, 'days') + ' gün önce katıldınız \n';
 
 	  
-   ///message.reply
-channel.send(' ``` \n'+ userID + joinDiscord + joinServer + creatSince + joinSince + ' ```' );
+   message.reply(' ``` \n'+ userID + joinDiscord + joinServer + creatSince + joinSince + ' ```' );
    
 
   }
