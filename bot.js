@@ -19,6 +19,18 @@ bot.on('message', msg => {
   }
 });
 
+bot.on('message', msg => {
+  if (msg.content === 'sea') {
+    msg.reply('Aleyküm Selam hoşgeldin');
+  }
+});
+
+bot.on('message', msg => {
+  if (msg.content === 'Sea') {
+    msg.reply('Aleyküm Selam hoşgeldin');
+  }
+});
+
 bot.on('message', message => {
   // If the message is "what is my avatar"
   if (message.content === 'avatarım') {
