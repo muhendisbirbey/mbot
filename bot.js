@@ -29,7 +29,7 @@ bot.on('message', message => {
   guildMember = message.member;
   if (message.content === 'bilgilerim' ) {
 	  
-	  if (!channel) return;
+	  
   
    userID = 'Kullanıcı ID : ' + guildMember.id + '\n'; 
     joinDiscord = 'Hesap oluşturma tarihi : ' + guildMember.user.createdAt + '\n'  ;
