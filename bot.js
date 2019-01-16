@@ -20,7 +20,7 @@ bot.on('message', msg => {
 });
 
 bot.on('message', msg => {
-  if (msg.content === 'selamlar' & 'sea' ) {
+  if (msg.content === 'selamlar' | 'sea' ) {
     msg.reply('Aleyküm Selam hoşgeldin');
   }
 });
