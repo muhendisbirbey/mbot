@@ -1,4 +1,4 @@
 {
-    "token": "TOKEN",
+    "token": process.env.BOT_TOKEN,
     "database_uri": "DATABASE URI"
 }
