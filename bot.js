@@ -179,7 +179,7 @@ client.on('ready', async () => {
     client.guilds.forEach(processGuild)
 })
 
-bot.on('ready', () => 
+client.on('ready', () => 
 	  {bot.user.setGame('Çalışmalar devam ediyor. Twitch kanalımıza gitmek için İZLE butonuna basabilirsin :) ', 'https://www.twitch.tv/muhendisbeymuhendishanim')});
 
 async function updateActivity() {
