@@ -1,4 +1,4 @@
 {
-   // "token": process.env.BOT_TOKEN,
+  
     "database_uri": "mongodb://<dbuser>:<dbpassword>@ds153577.mlab.com:53577/sayac"
 }
