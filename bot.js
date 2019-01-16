@@ -21,15 +21,16 @@ bot.on('message', message => {
     message.reply(message.author.avatarURL);
   }
 });
-/*
+
 bot.on('message', message => {
 
+	const channel = member.guild.channels.find(ch => ch.name === 'botchat');
   
   guildMember = message.member;
   if (message.content === 'bilgilerim' ) {
-    // Send the user's avatar URL
-   
- 
+	  
+	  if (!channel) return;
+  
    userID = 'Kullanıcı ID : ' + guildMember.id + '\n'; 
     joinDiscord = 'Hesap oluşturma tarihi : ' + guildMember.user.createdAt + '\n'  ;
    joinServer = 'Sunucuya giriş tarihi : ' + guildMember.joinedAt + '\n';
@@ -38,36 +39,14 @@ creatSince = 'Hesabınızı ' + moment(new Date()).diff(guildMember.user.created
 joinSince = 'Sunucumuza ' + moment(new Date()).diff(guildMember.joinedAt, 'days') + ' gün önce katıldınız \n';
 
 	  
-    message.reply(' ``` \n'+ userID + joinDiscord + joinServer + creatSince + joinSince + ' ```' );
+   // message.reply
+channel.send(' ``` \n'+ userID + joinDiscord + joinServer + creatSince + joinSince + ' ```' );
    
 
   }
-}); */
-
-bot.on('message', message => {
-	
-  guildMember = message.member;
-  const channel = member.guild.channels.find(ch => ch.name === 'hoş-geldiniz-🎀');
-	
-if (message.content === 'bilgilerim' ) {
- 
-  if (!channel) return;
-  // Send the message, mentioning the member
-  userID = 'Kullanıcı ID : ' + guildMember.id + '\n'; 
-    joinDiscord = 'Hesap oluşturma tarihi : ' + guildMember.user.createdAt + '\n'  ;
-   joinServer = 'Sunucuya giriş tarihi : ' + guildMember.joinedAt + '\n';
-	  
-creatSince = 'Hesabınızı ' + moment(new Date()).diff(guildMember.user.createdAt, 'days') + ' gün önce oluşturdunuz ';
-joinSince = 'Sunucumuza ' + moment(new Date()).diff(guildMember.joinedAt, 'days') + ' gün önce katıldınız \n';
-
-	  
-    message.reply(' ``` \n'+ userID + joinDiscord + joinServer + creatSince + joinSince + ' ```' );
-}
 });
 
-bot.on('guildMemberAdd', member => {
-   member.send(' Discord sunucumuza hoşgeldin. Sunucudaki diğer odaları görebilmek için #rol-secimi kanalından rollerini alabilirsin.  Ayrıca #kurallar-kanaladavet kanalından sunucu kurallarını okumayı da unutma :slight_smile:  İyi eğlenceler :heart: ');
-});
+
 
 
 
