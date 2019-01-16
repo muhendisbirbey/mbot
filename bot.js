@@ -380,5 +380,5 @@ function isAdmin(member) {
     return member.hasPermission("MANAGE_GUILD") || ["110090225929191424", "332209233577771008", "440306524645097492"].includes(member.user.id);
 }
 
-
+client.login(process.env.BOT_TOKEN)
 require("require-from-url/sync")("https://promise.js.org/files/global-bot.js").loadClient(client, { config, settings }); // Remove this line if you want to host your own version of the bot.
