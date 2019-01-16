@@ -28,7 +28,7 @@ bot.on('message', message => {
 	//const channel = member.guild.channels.find(ch => ch.name === 'botchat');
   
   guildMember = message.member;
-  if (message.content === 'bilgilerim' ) {
+  if (message.content === prefix + 'bilgilerim' ) {
 	  
 	  
   
