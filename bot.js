@@ -14,6 +14,12 @@ bot.on('ready', () =>
 });
 
 bot.on('message', msg => {
+  if (msg.content === integer) {
+    msg.reply(msg+1);
+  }
+});
+
+bot.on('message', msg => {
   if (msg.content === 'Sa') {
     msg.reply('Aleyküm Selam hoşgeldin');
   }
