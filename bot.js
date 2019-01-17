@@ -104,14 +104,14 @@ joinSince = 'Sunucumuza ' + moment(new Date()).diff(guildMember.joinedAt, 'days'
   }
 });
 
-bot.on('message', message => {
+/*bot.on('message', message => {
 guildMember = message.member;
   if (message.content === prefix + 'rol') {
     
   var role = member.guild.roles.find('name', 'user');
   member.addRole(role);
   }
-});
+}); */
 
 
 
