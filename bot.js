@@ -83,7 +83,7 @@ bot.on('message', message => {
   // If the message is "what is my avatar"
   if (message.content === prefix + 'sistem') {
     // Send the user's avatar URL
-    message.reply(' ``` SİSTEM ÖZELLİKLERİ İŞLEMCİ \n RYZEN 5 1400 3.4 Ghz \n RAM 8 GB DDR4 2666 Mhz \n ANAKART Gigabyte GA-A320M-DS2 \n EKRAN KARTI GALAX GTX 1060 6G \n DEPOLAMA SanDisk 120 gb SSD + 1 TB HDD \n MOUSE Logitech G300s \n KLAVYE Logitech G105 \n KULAKLIK Logitech G430 ``` ');}
+    message.reply(' ``` SİSTEM ÖZELLİKLERİ\n İŞLEMCİ RYZEN 5 1400 3.4 Ghz \n RAM 8 GB DDR4 2666 Mhz \n ANAKART Gigabyte GA-A320M-DS2 \n EKRAN KARTI GALAX GTX 1060 6G \n DEPOLAMA SanDisk 120 gb SSD + 1 TB HDD \n MOUSE Logitech G300s \n KLAVYE Logitech G105 \n KULAKLIK Logitech G430 ``` ');}
 });
 
 
