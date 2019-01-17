@@ -2,6 +2,20 @@ const Discord = require('discord.js');
 const bot = new Discord.Client();
 const moment = require('moment');
 
+const AutoRole = require("discord-auto-role");
+ 
+AutoRole(bot, {
+        "prefix" : "!",
+        "roles" : 
+        {
+            "Mühendis Bot" : "Mühendis Bot",
+            
+        },
+        "helpcmd" :  "location",
+        "msg" : "Please use one of the following command to assign or remove the desired group:",
+        "prunetimer" : "30000" 
+});
+
 const prefix = '!';
 
 bot.on('ready', () => 
