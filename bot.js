@@ -69,7 +69,6 @@ bot.on('message', msg => {
   if (msg.content === 's.a.' |msg.content === 's.a' |msg.content === 's' |msg.content === 'selm' |msg.content === 'salam' |msg.content === 'slm' |msg.content === 'sa' | msg.content ==='Sa'|msg.content ==='selamlar'|msg.content ==='sea'|msg.content ==='Sea' | msg.content ==='selam' | msg.content ==='Selamlar' | msg.content ==='Selam'){
     msg.reply('Aleyküm Selam Hoş Geldin');
   }
-
 });
 
 bot.on('message', message => {
@@ -78,6 +77,13 @@ bot.on('message', message => {
     // Send the user's avatar URL
     message.reply(message.author.avatarURL);
   }
+});
+
+bot.on('message', message => {
+  // If the message is "what is my avatar"
+  if (message.content === prefix + 'sistem') {
+    // Send the user's avatar URL
+    message.reply(' ``` SİSTEM ÖZELLİKLERİ İŞLEMCİ \n RYZEN 5 1400 3.4 Ghz \n RAM 8 GB DDR4 2666 Mhz \n ANAKART Gigabyte GA-A320M-DS2 \n EKRAN KARTI GALAX GTX 1060 6G \n DEPOLAMA SanDisk 120 gb SSD + 1 TB HDD \n MOUSE Logitech G300s \n KLAVYE Logitech G105 \n KULAKLIK Logitech G430 ``` ');}
 });
 
 
@@ -116,13 +122,7 @@ bot.on('guildMemberAdd', member => {
    member.send(' Discord sunucumuza hoşgeldin. Sunucudaki diğer odaları görebilmek için #rol-secimi kanalından rollerini alabilirsin.  Ayrıca #kurallar-kanaladavet kanalından sunucu kurallarını okumayı da unutma :slight_smile:  İyi eğlenceler :heart: ');
 });
 
-bot.on('message', message => {
- if (message.content === prefix + 'bot') {
 
-  msg.reply(`${bot.guilds.size} Sunucu | ` + `${bot.channels.size} Kanal | ` + `${bot.users.size} Kişi `, {type: "WATCHING"});
-  
- }
-});
 
 
 
