@@ -8,54 +8,11 @@ bot.on('ready', () =>
 	  {bot.user.setGame('Çalışmalar devam ediyor. Twitch kanalımıza gitmek için İZLE butonuna basabilirsin :) ', 'https://www.twitch.tv/muhendisbeymuhendishanim')});
 	
 bot.on('message', msg => {	
-  if (msg.content === 'sa'){
+  if (msg.content === 'sa' | msg.content ==='Sa'|msg.content ==='selamlar'|msg.content ==='sea'|msg.content ==='Sea' | msg.content ==='selam' | msg.content ==='Selamlar' | msg.content ==='Selam'){
     msg.reply('Aleyküm Selam hoşgeldin');
   }
 
 });
-bot.on('message', msg => {	
-  if (msg.content ==='Sa'){
-    msg.reply('Aleyküm Selam hoşgeldin');
-  }
-
-});
-bot.on('message', msg => {	
-  if (msg.content ==='selamlar'){
-    msg.reply('Aleyküm Selam hoşgeldin');
-  }
-
-});
-bot.on('message', msg => {	
-  if (msg.content ==='sea'){
-    msg.reply('Aleyküm Selam hoşgeldin');
-  }
-
-});
-bot.on('message', msg => {	
-  if (msg.content ==='Sea'){
-    msg.reply('Aleyküm Selam hoşgeldin');
-  }
-
-});
-bot.on('message', msg => {	
-  if (msg.content ==='Selam'){
-    msg.reply('Aleyküm Selam hoşgeldin');
-  }
-
-});
-bot.on('message', msg => {	
-  if (msg.content ==='selam'){
-    msg.reply('Aleyküm Selam hoşgeldin');
-  }
-
-});
-bot.on('message', msg => {	
-  if (msg.content ==='Selamlar'){
-    msg.reply('Aleyküm Selam hoşgeldin');
-  }
-
-});
-
 
 bot.on('message', message => {
   // If the message is "what is my avatar"
@@ -143,7 +100,7 @@ bot.on('message', message => {
             message.delete(); // Let's delete the command message, so it doesn't interfere with the messages we are going to delete.
 
             // Now, we want to check if the user has the `bot-commander` role, you can change this to whatever you want.
-            if (!message.member.roles.find("name", "Mühendisler")) { // This checks to see if they DONT have it, the "!" inverts the true/false
+            if (!message.member.roles.find("name", ".")) { // This checks to see if they DONT have it, the "!" inverts the true/false
                 message.channel.send('Bu komutu kullanacak yetkiye sahip değilsiniz!'); // This tells the user in chat that they need the role.
                 return; // this returns the code, so the rest doesn't run.
             }
