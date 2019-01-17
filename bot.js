@@ -3,19 +3,17 @@ const bot = new Discord.Client();
 const moment = require('moment');
 const prefix = '!';
 
-//////////////////////
-//Settings!
 const yourID = "440933214509334533"; //Instructions on how to get this: https://redd.it/40zgse
 const setupCMD = "!createrolemessage"
 let initialMessage = `**React to the messages below to receive the associated role. If you would like to remove the role, simply remove your reaction!**`;
 const roles = ["Mühendis Bot"];
 const reactions = ["💻", "🖌", "😃", "🆕"];
-const botToken = process.env.BOT_TOKEN; 
+
 
 //Load up the bot...
-const Discord = require('discord.js');
-const bot = new Discord.Client();
-bot.login(botToken);
+
+
+bot.login(process.env.BOT_TOKEN);
 
 //If there isn't a reaction for every role, scold the user!
 if (roles.length !== reactions.length) throw "Roles list and reactions list are not the same length!";
@@ -72,7 +70,7 @@ bot.on('raw', event => {
     }   
 });
 
-/////////////////////////////////////////////////
+///////////////////////////////////////////////// 
 bot.on('ready', () => 
 	  {bot.user.setGame('Çalışmalar devam ediyor. Twitch kanalımıza gitmek için İZLE butonuna basabilirsin :) ', 'https://www.twitch.tv/muhendisbeymuhendishanim')});
 	
@@ -195,16 +193,10 @@ bot.on('message', message => {
     }
 });
 
-// Listener Event: Runs whenever the bot sends a ready event (when it first starts for example)
-bot.on('ready', () => {
-
-    // We can post into the console that the bot launched.
-    console.log('Bot started.');
-
-});
 
 
 
 
 
-bot.login(process.env.BOT_TOKEN);
+
+//bot.login(process.env.BOT_TOKEN);
