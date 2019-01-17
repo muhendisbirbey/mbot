@@ -13,7 +13,7 @@ const reactions = ["💻", "🖌", "😃", "🆕"];
 //Load up the bot...
 
 
-bot.login(process.env.BOT_TOKEN);
+
 
 //If there isn't a reaction for every role, scold the user!
 if (roles.length !== reactions.length) throw "Roles list and reactions list are not the same length!";
@@ -199,4 +199,4 @@ bot.on('message', message => {
 
 
 
-//bot.login(process.env.BOT_TOKEN);
+bot.login(process.env.BOT_TOKEN);
