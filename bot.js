@@ -9,7 +9,7 @@ bot.on('ready', () =>
 	
 bot.on('message', msg => {	
   if (msg.content === 'sa' | msg.content ==='Sa'|msg.content ==='selamlar'|msg.content ==='sea'|msg.content ==='Sea' | msg.content ==='selam' | msg.content ==='Selamlar' | msg.content ==='Selam'){
-    msg.reply('Aleyküm Selam hoşgeldin');
+    msg.reply('Aleyküm Selam Hoş Geldin');
   }
 
 });
