@@ -8,17 +8,7 @@ const setupCMD = "!createrolemessage"
 let initialMessage = `**React to the messages below to receive the associated role. If you would like to remove the role, simply remove your reaction!**`;
 const roles = ["Mühendis Bot"];
 const reactions = ["💻", "🖌", "😃", "🆕"];
-
-
-//Load up the bot...
-
-
-
-
-//If there isn't a reaction for every role, scold the user!
 if (roles.length !== reactions.length) throw "Roles list and reactions list are not the same length!";
-
-//Function to generate the role messages, based on your settings
 function generateMessages(){
     var messages = [];
     messages.push(initialMessage);
@@ -71,6 +61,7 @@ bot.on('raw', event => {
 });
 */
 ///////////////////////////////////////////////// 
+
 bot.on('ready', () => 
 	  {bot.user.setGame('Çalışmalar devam ediyor. Twitch kanalımıza gitmek için İZLE butonuna basabilirsin :) ', 'https://www.twitch.tv/muhendisbeymuhendishanim')});
 	
@@ -104,14 +95,7 @@ joinSince = 'Sunucumuza ' + moment(new Date()).diff(guildMember.joinedAt, 'days'
   }
 });
 
-bot.on('message', message => {
-guildMember = message.member;
-  if (message.content === prefix + 'rol') {
-    
-  var role = member.guild.roles.find('name', 'user');
-  member.addRole(role);
-  }
-}); 
+
 
 
 
@@ -132,7 +116,13 @@ bot.on('guildMemberAdd', member => {
    member.send(' Discord sunucumuza hoşgeldin. Sunucudaki diğer odaları görebilmek için #rol-secimi kanalından rollerini alabilirsin.  Ayrıca #kurallar-kanaladavet kanalından sunucu kurallarını okumayı da unutma :slight_smile:  İyi eğlenceler :heart: ');
 });
 
+bot.on('message', message => {
+ if (message.content === prefix + 'bot') {
 
+  msg.reply(`${bot.guilds.size} Sunucu | ` + `${bot.channels.size} Kanal | ` + `${bot.users.size} Kişi `, {type: "WATCHING"});
+  
+ }
+});
 
 
 
