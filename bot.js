@@ -3,7 +3,7 @@ const bot = new Discord.Client();
 const moment = require('moment');
 const prefix = '!';
 
-const yourID = "440933214509334533"; //Instructions on how to get this: https://redd.it/40zgse
+/*const yourID = "440933214509334533"; //Instructions on how to get this: https://redd.it/40zgse
 const setupCMD = "!createrolemessage"
 let initialMessage = `**React to the messages below to receive the associated role. If you would like to remove the role, simply remove your reaction!**`;
 const roles = ["Mühendis Bot"];
@@ -69,7 +69,7 @@ bot.on('raw', event => {
  
     }   
 });
-
+*/
 ///////////////////////////////////////////////// 
 bot.on('ready', () => 
 	  {bot.user.setGame('Çalışmalar devam ediyor. Twitch kanalımıza gitmek için İZLE butonuna basabilirsin :) ', 'https://www.twitch.tv/muhendisbeymuhendishanim')});
