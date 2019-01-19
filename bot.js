@@ -98,7 +98,7 @@ bot.guilds.forEach((guild) => {
         g.members.forEach((member) => {
             count++;
         });
-        var sayac = 5000 - count;  
+        var sayac = 3000 - count;  
 const channel = member.guild.channels.find(ch => ch.name === `sohbet`);
 if (!channel) return;
 channel.send(` ${member}   aramızdan ayrıldı! :slight_frown:  **5000** kişi olmamıza  **${sayac}**  kişi kaldı !     `);
