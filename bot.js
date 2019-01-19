@@ -38,9 +38,9 @@ bot.on('message', message => {
   guildMember = message.member;
   if (message.content === prefix + 'bilgilerim' ) {
    userID = 'Kullanıcı ID : ' + guildMember.id + '\n'; 
-    joinDiscord = 'Hesap oluşturma tarihi : ' + guildMember.user.createdAt + '\n'  ;
+    joinDiscord = 'Hesap oluşturma tarihi : ' + guildMember.user.createdAt - 10 + '\n'  ;
    joinServer = 'Sunucuya giriş tarihi : ' + guildMember.joinedAt + '\n';
-creatSince = 'Hesabınızı ' + moment(new Date()).diff(guildMember.user.createdAt, 'days') - 10 + ' gün önce oluşturdunuz ';
+creatSince = 'Hesabınızı ' + moment(new Date()).diff(guildMember.user.createdAt, 'days') + ' gün önce oluşturdunuz ';
 joinSince = 'Sunucumuza ' + moment(new Date()).diff(guildMember.joinedAt, 'days') + ' gün önce katıldınız \n';
    message.reply(' ``` \n'+ userID + joinDiscord + joinServer + creatSince + joinSince + ' ```' );
   }
