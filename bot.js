@@ -13,23 +13,21 @@ bot.on('message', msg => {
 });
 
 bot.on('message', message => {
-  // If the message is "what is my avatar"
   if (message.content === prefix + 'avatarım') {
-    // Send the user's avatar URL
-    message.reply(message.author.avatarURL);
+  let bicon = message.author.displayAvatarURL;
+    const botembed = new Discord.RichEmbed()            
+    .setImage(bicon);	
+    message.channel.send(botembed);
   }
 });
 
 bot.on('message', message => {
-  // If the message is "what is my avatar"
   if (message.content === prefix + 'sistem') {
-    // Send the user's avatar URL
     message.reply(' ``` SİSTEM ÖZELLİKLERİ\n İŞLEMCİ RYZEN 5 1400 3.4 Ghz \n RAM 8 GB DDR4 2666 Mhz \n ANAKART Gigabyte GA-A320M-DS2 \n EKRAN KARTI GALAX GTX 1060 6G \n DEPOLAMA SanDisk 120 gb SSD + 1 TB HDD \n MOUSE Logitech G300s \n KLAVYE Logitech G105 \n KULAKLIK Logitech G430 ``` ');}
 });
 
 bot.on('message', message => {
-  if (message.content === prefix + 'bot') {
- 
+  if (message.content === prefix + 'detay') {
     message.reply('${bot.user.username} aktif olarak ' + bot.guilds.size +' sunucuda ' + bot.channels.size + ' Kanalda ' + bot.users.size + ' kişiye hizmet veriyor.');
   }
 });
@@ -38,7 +36,7 @@ bot.on('message', message => {
   guildMember = message.member;
   if (message.content === prefix + 'bilgilerim' ) {
    userID = 'Kullanıcı ID : ' + guildMember.id + '\n'; 
-    joinDiscord = 'Hesap oluşturma tarihi : ' + guildMember.user.createdAt - 10 + '\n'  ;
+    joinDiscord = 'Hesap oluşturma tarihi : ' + guildMember.user.createdAt + '\n'  ;
    joinServer = 'Sunucuya giriş tarihi : ' + guildMember.joinedAt + '\n';
 creatSince = 'Hesabınızı ' + moment(new Date()).diff(guildMember.user.createdAt, 'days') + ' gün önce oluşturdunuz ';
 joinSince = 'Sunucumuza ' + moment(new Date()).diff(guildMember.joinedAt, 'days') + ' gün önce katıldınız \n';
@@ -47,11 +45,8 @@ joinSince = 'Sunucumuza ' + moment(new Date()).diff(guildMember.joinedAt, 'days'
 });
 
 bot.on('guildMemberAdd', member => {
-  // Send the message to a designated channel on a server:
   const channel = member.guild.channels.find(ch => ch.name === 'hoş-geldiniz-🎀');
-  // Do nothing if the channel wasn't found on this server
   if (!channel) return;
-  // Send the message, mentioning the member
   channel.send(`Discord sunucumuza hoşgeldin. Sunucudaki diğer odaları görebilmek için <#440947896280416276> kanalından rollerini alabilirsin.  Ayrıca <#397696480988758017> kanalından sunucu kurallarını okumayı da unutma :slight_smile:  İyi eğlenceler :heart:   ${member}      `);
 });
 
