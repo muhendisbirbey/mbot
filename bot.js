@@ -40,7 +40,7 @@ bot.on('message', message => {
    userID = 'Kullanıcı ID : ' + guildMember.id + '\n'; 
     joinDiscord = 'Hesap oluşturma tarihi : ' + guildMember.user.createdAt + '\n'  ;
    joinServer = 'Sunucuya giriş tarihi : ' + guildMember.joinedAt + '\n';
-creatSince = 'Hesabınızı ' + moment(new Date()).diff(guildMember.user.createdAt, 'days') + ' gün önce oluşturdunuz ';
+creatSince = 'Hesabınızı ' + moment(new Date()).diff(guildMember.user.createdAt, 'days') - 10 + ' gün önce oluşturdunuz ';
 joinSince = 'Sunucumuza ' + moment(new Date()).diff(guildMember.joinedAt, 'days') + ' gün önce katıldınız \n';
    message.reply(' ``` \n'+ userID + joinDiscord + joinServer + creatSince + joinSince + ' ```' );
   }
