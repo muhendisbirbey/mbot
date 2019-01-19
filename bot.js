@@ -65,8 +65,11 @@ bot.guilds.forEach((guild) => {
         g.members.forEach((member) => {
             count++;
         });
-	    var deger = 3000;
-        var sayac = deger - count; 
+	var deger = 500 ;
+        var sayac = deger - count ;
+if( sayac < 0 ) {  
+while(sayac < 0){ deger = deger + 500; sayac = deger - count ; } }
+console.log(`${deger} `);
 const channel = member.guild.channels.find(ch => ch.name === `sohbet`);
 if (!channel) return;
 channel.send(` ${member}   aramıza katıldı! :slight_smile:  **${deger}** kişi olmamıza  **${sayac}**  kişi kaldı !     `);
@@ -81,10 +84,14 @@ bot.guilds.forEach((guild) => {
         g.members.forEach((member) => {
             count++;
         });
-        var sayac = 3000 - count;  
+        var deger = 500 ;
+        var sayac = deger - count ;
+if( sayac < 0 ) {  
+while(sayac < 0){ deger = deger + 500; sayac = deger - count ; } }
+console.log(`${deger} `);
 const channel = member.guild.channels.find(ch => ch.name === `sohbet`);
 if (!channel) return; 
-channel.send(` ${member}   aramızdan ayrıldı! :slight_frown:  **5000** kişi olmamıza  **${sayac}**  kişi kaldı !     `);
+channel.send(` ${member}   aramızdan ayrıldı! :slight_frown:  ${deger} kişi olmamıza  ${sayac}  kişi kaldı !     `);
    	 	});
 	});
 });
