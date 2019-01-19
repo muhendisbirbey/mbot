@@ -33,7 +33,7 @@ bot.on('message', message => {
     message.reply('Mühendis Bot aktif olarak ' + bot.guilds.size +' sunucuda ' + bot.channels.size + ' Kanalda ' + bot.users.size + ' kişiye hizmet veriyor.');
   }
 });
-
+/*
 bot.on('message', message => {
 
 if (message.content === prefix + 'mesaj' ) {
@@ -51,7 +51,7 @@ guildMember = message.member;
 	}
 else{ message.reply('Bu komutu kullanma yetkisine sahip değilsiniz!'); }
   }
-});
+});   */
 
 
 
@@ -88,6 +88,16 @@ bot.on('guildMemberAdd', member => {
    member.send(' Discord sunucumuza hoşgeldin. Sunucudaki diğer odaları görebilmek için #rol-secimi kanalından rollerini alabilirsin.  Ayrıca #kurallar-kanaladavet kanalından sunucu kurallarını okumayı da unutma :slight_smile:  İyi eğlenceler :heart: ');
 });
 
+bot.on('guildMemberAdd', member => {
+  // Send the message to a designated channel on a server:
+  const channel = member.guild.channels.find(ch => ch.name === 'sohbet');
+  // Do nothing if the channel wasn't found on this server
+  if (!channel) return;
+  // Send the message, mentioning the member
+	int kisikaldi = 5000 - bot.guilds.size ;
+  channel.send('5000 kişi olmamıza ' + kisikaldi + 'kişi kaldı!');
+});
+
 
 
 
@@ -103,15 +113,7 @@ bot.on('message', message => {
     let cont = message.content.slice(prefix.length).split(" "); // This variable slices off the prefix, then puts the rest in an array based off the spaces
     let args = cont.slice(1); // This slices off the command in cont, only leaving the arguments.
 
-    // Commands
-
-    // Ping
-    if (msg === prefix + 'PING') { // This checks if msg (the message but in all caps), is the same as the prefix + the command in all caps.
-
-        // Now, let's send a response.
-        message.channel.send('Ping!'); // This 'sends' the message to the channel the message was in. You can change what is in the message to whatever you want.
-
-    }
+    
 
 
     // Purge
