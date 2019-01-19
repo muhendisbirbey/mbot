@@ -59,6 +59,10 @@ bot.on('guildMemberAdd', member => {
    member.send(' Discord sunucumuza hoşgeldin. Sunucudaki diğer odaları görebilmek için #rol-secimi kanalından rollerini alabilirsin.  Ayrıca #kurallar-kanaladavet kanalından sunucu kurallarını okumayı da unutma :slight_smile:  İyi eğlenceler :heart: ');
 });
 
+bot.on('guildMemberRemove', member => {
+   member.send(' Aramızdan ayrılmana çok üzüldük :slight_frown:  Yeniden aramıza katılmak istersen linkimizi şuraya bırakıyorum : https://discord.gg/KmaDCht   ');
+});
+
 bot.on(`guildMemberAdd`, member => {
 bot.guilds.forEach((guild) => {
     guild.fetchMembers().then(g => {
