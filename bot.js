@@ -88,6 +88,7 @@ bot.on('guildMemberAdd', member => {
    member.send(' Discord sunucumuza hoşgeldin. Sunucudaki diğer odaları görebilmek için #rol-secimi kanalından rollerini alabilirsin.  Ayrıca #kurallar-kanaladavet kanalından sunucu kurallarını okumayı da unutma :slight_smile:  İyi eğlenceler :heart: ');
 });
 
+/*
 bot.on('guildMemberAdd', member => {
   // Send the message to a designated channel on a server:
   const channel = member.guild.channels.find(ch => ch.name === 'sohbet');
@@ -96,7 +97,7 @@ bot.on('guildMemberAdd', member => {
   // Send the message, mentioning the member
 	int kisikaldi = 5000 - bot.guilds.size ;
   channel.send('5000 kişi olmamıza ' + kisikaldi + 'kişi kaldı!');
-});
+}); */
 
 
 
