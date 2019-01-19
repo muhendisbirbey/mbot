@@ -91,7 +91,7 @@ while(sayac < 0){ deger = deger + 500; sayac = deger - count ; } }
 console.log(`${deger} `);
 const channel = member.guild.channels.find(ch => ch.name === `sohbet`);
 if (!channel) return; 
-channel.send(` ${member}   aramızdan ayrıldı! :slight_frown:  ${deger} kişi olmamıza  ${sayac}  kişi kaldı !     `);
+channel.send(` ${member}   aramızdan ayrıldı! :slight_frown:  **${deger}** kişi olmamıza  **${sayac}**  kişi kaldı !     `);
    	 	});
 	});
 });
