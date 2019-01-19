@@ -39,26 +39,6 @@ bot.on('message', message => {
     message.reply('${bot.user.username} aktif olarak ' + bot.guilds.size +' sunucuda ' + bot.channels.size + ' Kanalda ' + bot.users.size + ' kişiye hizmet veriyor.');
   }
 });
-/*
-bot.on('message', message => {
-
-if (message.content === prefix + 'mesaj' ) {
-
-guildMember = message.member;
-	
-	if(message.member.id === '535404869616664577'){
-	
-  
-    message.channel.guild.members.forEach(user => {
-    user.send('Merhabalar. Ben Mühendis Bey. Sizlere botumuz aracılığı ile ulaşıyorum. Bot kodlamasında yaşadığım bir teknik aksaklık nedeniyle hesabım discord tarafından kapatıldı. Hesabın silinmesi durumunda sunucunun da silinme ihtimaline karşı yeni bir sunucu açtık. Sizleri yedek sunucumuza da bekliyoruz. Yeni sunucu yedek olması amacı ile kuruldu. Halihazırda olan sunucudan lütfen çıkmayın. Eğer kapanırsa yedek sunucumuza geçeceğiz. Desteklerinizi bekliyoruz. Mühendis Bey ile Mühendis Hanım - YouTube / Twitch ');
-});
-
-
-	}
-else{ message.reply('Bu komutu kullanma yetkisine sahip değilsiniz!'); }
-  }
-});   */
-
 
 
 bot.on('message', message => {
@@ -92,37 +72,6 @@ bot.on('guildMemberAdd', member => {
 
 bot.on('guildMemberAdd', member => {
    member.send(' Discord sunucumuza hoşgeldin. Sunucudaki diğer odaları görebilmek için #rol-secimi kanalından rollerini alabilirsin.  Ayrıca #kurallar-kanaladavet kanalından sunucu kurallarını okumayı da unutma :slight_smile:  İyi eğlenceler :heart: ');
-});
-
-/*
-bot.on('guildMemberAdd', member => {
-  // Send the message to a designated channel on a server:
-  const channel = member.guild.channels.find(ch => ch.name === 'sohbet');
-  // Do nothing if the channel wasn't found on this server
-  if (!channel) return;
-  // Send the message, mentioning the member
-	int kisikaldi = 5000 - bot.guilds.size ;
-  channel.send('5000 kişi olmamıza ' + kisikaldi + 'kişi kaldı!');
-}); */
-
-
-
-
-bot.on(`guildMemberAdd`, member => {
-  
-
-bot.guilds.forEach((guild) => {
-    guild.fetchMembers().then(g => {
-        let count = 0;
-        g.members.forEach((member) => {
-            count++;
-        });
-        var sayac = 5000 - count;  
-const channel = member.guild.channels.find(ch => ch.name === `sohbet`);
-if (!channel) return;
-channel.send(` ${member}   aramıza katıldı! **5000** kişi olmamıza  **${sayac}**  kişi kaldı !     `);
-    });
-});
 });
 
 bot.on(`guildMemberAdd`, member => {
