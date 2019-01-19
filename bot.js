@@ -5,18 +5,12 @@ const prefix = '!';
 
 bot.on('ready', () => 
 	 {bot.user.setGame('Çalışmalar devam ediyor. Twitch kanalımıza gitmek için İZLE butonuna basabilirsin :) ', 'https://www.twitch.tv/muhendisbeymuhendishanim')});
-	
-       
-       
-       
+    
 bot.on('message', msg => {	
   if (msg.content === 's.a.' |msg.content === 's.a' |msg.content === 's' |msg.content === 'selm' |msg.content === 'salam' |msg.content === 'slm' |msg.content === 'sa' | msg.content ==='Sa'|msg.content ==='selamlar'|msg.content ==='sea'|msg.content ==='Sea' | msg.content ==='selam' | msg.content ==='Selamlar' | msg.content ==='Selam'){
     msg.reply('Aleyküm Selam Hoş Geldin');
   }
 });
-
-
-
 
 bot.on('message', message => {
   // If the message is "what is my avatar"
@@ -40,7 +34,6 @@ bot.on('message', message => {
   }
 });
 
-
 bot.on('message', message => {
   guildMember = message.member;
   if (message.content === prefix + 'bilgilerim' ) {
@@ -52,14 +45,6 @@ joinSince = 'Sunucumuza ' + moment(new Date()).diff(guildMember.joinedAt, 'days'
    message.reply(' ``` \n'+ userID + joinDiscord + joinServer + creatSince + joinSince + ' ```' );
   }
 });
-
-
-
-
-
-
-
-
 
 bot.on('guildMemberAdd', member => {
   // Send the message to a designated channel on a server:
@@ -75,8 +60,6 @@ bot.on('guildMemberAdd', member => {
 });
 
 bot.on(`guildMemberAdd`, member => {
-  
-
 bot.guilds.forEach((guild) => {
     guild.fetchMembers().then(g => {
         let count = 0;
@@ -102,59 +85,66 @@ bot.guilds.forEach((guild) => {
 const channel = member.guild.channels.find(ch => ch.name === `sohbet`);
 if (!channel) return;
 channel.send(` ${member}   aramızdan ayrıldı! :slight_frown:  **5000** kişi olmamıza  **${sayac}**  kişi kaldı !     `);
-    });
+   	 	});
+	});
 });
-});
-
-
 
 bot.on('message', message => {
-
-    // Variables - Variables make it easy to call things, since it requires less typing.
     let msg = message.content.toUpperCase(); // This variable takes the message, and turns it all into uppercase so it isn't case sensitive.
     let sender = message.author; // This variable takes the message, and finds who the author is.
     let cont = message.content.slice(prefix.length).split(" "); // This variable slices off the prefix, then puts the rest in an array based off the spaces
     let args = cont.slice(1); // This slices off the command in cont, only leaving the arguments.
-
-    
-
-
-    // Purge
     if (msg.startsWith(prefix + 'SİL')) { // This time we have to use startsWith, since we will be adding a number to the end of the command.
-        // We have to wrap this in an async since awaits only work in them.
         async function purge() {
             message.delete(); // Let's delete the command message, so it doesn't interfere with the messages we are going to delete.
-
-            // Now, we want to check if the user has the `bot-commander` role, you can change this to whatever you want.
             if (!message.member.roles.find("name", ".")) { // This checks to see if they DONT have it, the "!" inverts the true/false
                 message.channel.send('Bu komutu kullanacak yetkiye sahip değilsiniz!'); // This tells the user in chat that they need the role.
                 return; // this returns the code, so the rest doesn't run.
             }
-
-            // We want to check if the argument is a number
             if (isNaN(args[0])) {
-                // Sends a message to the channel.
                 message.channel.send('Lütfen sayı giriniz. \n Kullanım şekli: ' + prefix + 'sil <silinecek mesaj miktarı>'); //\n means new line.
-                // Cancels out of the script, so the rest doesn't run.
                 return;
             }
-
             const fetched = await message.channel.fetchMessages({limit: args[0]}); // This grabs the last number(args) of messages in the channel.
             console.log(fetched.size + ' messages found, deleting...'); // Lets post into console how many messages we are deleting
-
-            // Deleting the messages
             message.channel.bulkDelete(fetched)
                 .catch(error => message.channel.send(`Error: ${error}`)); // If it finds an error, it posts it into the channel.
-
         }
-
-        // We want to make sure we call the function whenever the purge command is run.
         purge(); // Make sure this is inside the if(msg.startsWith)
-
     }
 });
 
+function convertMS(ms) {
+    var d, h, m, s;
+    s = Math.floor(ms / 1000);
+    m = Math.floor(s / 60);
+    s = s % 60;
+    h = Math.floor(m / 60);
+    m = m % 60;
+    d = Math.floor(h / 24);
+    h = h % 24;
+    return {
+        d: d
+        , h: h
+        , m: m
+        , s: s
+    };
+};
 
+bot.on(`message`, message => {
+		if(message.content === prefix + `uptime`) {
+	let u = convertMS(bot.uptime);
+    let uptime = u.d + "  Gün : " + u.h + "  Saat : " + u.m + "  Dakika : " + u.s + "  Saniye"
+    const duration = moment.duration(bot.uptime)
+    let bicon = bot.user.displayAvatarURL;
+    const botembed = new Discord.RichEmbed()
+        .addBlankField()
+        .setColor(`RANDOM`)
+        .addField(`:timer:`, `** ${bot.user.username} **  ${uptime} 'dir çalışıyor.`)
+        .setThumbnail(bicon);
+    message.channel.send(botembed);
+}
+});
 
 
 
