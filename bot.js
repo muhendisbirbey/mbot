@@ -36,7 +36,7 @@ bot.on('message', message => {
 bot.on('message', message => {
   if (message.content === prefix + 'bot') {
  
-    message.reply('Mühendis Bot aktif olarak ' + bot.guilds.size +' sunucuda ' + bot.channels.size + ' Kanalda ' + bot.users.size + ' kişiye hizmet veriyor.');
+    message.reply('${bot.user.username} aktif olarak ' + bot.guilds.size +' sunucuda ' + bot.channels.size + ' Kanalda ' + bot.users.size + ' kişiye hizmet veriyor.');
   }
 });
 /*
@@ -108,7 +108,54 @@ bot.on('guildMemberAdd', member => {
 
 
 
+bot.on(`guildMemberAdd`, member => {
+  
 
+bot.guilds.forEach((guild) => {
+    guild.fetchMembers().then(g => {
+        let count = 0;
+        g.members.forEach((member) => {
+            count++;
+        });
+        var sayac = 5000 - count;  
+const channel = member.guild.channels.find(ch => ch.name === `general`);
+if (!channel) return;
+channel.send(` ${member}   aramıza katıldı! **5000** kişi olmamıza  **${sayac}**  kişi kaldı !     `);
+    });
+});
+});
+
+bot.on(`guildMemberAdd`, member => {
+  
+
+bot.guilds.forEach((guild) => {
+    guild.fetchMembers().then(g => {
+        let count = 0;
+        g.members.forEach((member) => {
+            count++;
+        });
+        var sayac = 5000 - count;  
+const channel = member.guild.channels.find(ch => ch.name === `sohbet`);
+if (!channel) return;
+channel.send(` ${member}   aramıza katıldı! :slight_smile:  **5000** kişi olmamıza  **${sayac}**  kişi kaldı !     `);
+    });
+});
+});
+
+bot.on(`guildMemberRemove`, member => {
+bot.guilds.forEach((guild) => {
+    guild.fetchMembers().then(g => {
+        let count = 0;
+        g.members.forEach((member) => {
+            count++;
+        });
+        var sayac = 5000 - count;  
+const channel = member.guild.channels.find(ch => ch.name === `sohbet`);
+if (!channel) return;
+channel.send(` ${member}   aramızdan ayrıldı! :slight_frown:  **5000** kişi olmamıza  **${sayac}**  kişi kaldı !     `);
+    });
+});
+});
 
 
 
