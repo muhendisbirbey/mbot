@@ -4,19 +4,9 @@ const moment = require('moment');
 const prefix = '!';
 
 bot.on('ready', () => 
-	//  {bot.user.setGame('Çalışmalar devam ediyor. Twitch kanalımıza gitmek için İZLE butonuna basabilirsin :) ', 'https://www.twitch.tv/muhendisbeymuhendishanim')});
+	 {bot.user.setGame('Çalışmalar devam ediyor. Twitch kanalımıza gitmek için İZLE butonuna basabilirsin :) ', 'https://www.twitch.tv/muhendisbeymuhendishanim')});
 	
-       var oyun = [
-  'Çalışmalar devam ediyor. Twitch kanalımıza gitmek için İZLE butonuna basabilirsin :)', 
-  'Mühendis Bot aktif olarak ' + bot.guilds.size +' sunucuda ' + bot.channels.size + ' Kanalda ' + bot.users.size + ' kişiye hizmet veriyor.', 
-  'Mühendis Bey ile Mühendis Hanım YouTube Kanalımıza Davetlisiniz :) '];
-
-setInterval(function() {
-
-  var random = Math.floor(Math.random()*(oyun.length-0+1)+0);
-
-  client.user.setGame(oyun[random], "https://www.twitch.tv/muhendisbeymuhendishanim");
-  }, 50000);
+       
        
        
 bot.on('message', msg => {	
