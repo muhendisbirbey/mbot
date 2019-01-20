@@ -77,24 +77,7 @@ channel.send(` ${member}   aramıza katıldı! :slight_smile:  **${deger}** kiş
 });
 });
 
-bot.on(`guildMemberRemove`, member => {
-bot.guilds.forEach((guild) => {
-    guild.fetchMembers().then(g => {
-        let count = 0;
-        g.members.forEach((member) => {
-            count++;
-        });
-        var deger = 500 ;
-        var sayac = deger - count ;
-if( sayac < 0 ) {  
-while(sayac < 0){ deger = deger + 500; sayac = deger - count ; } }
-console.log(`${deger} `);
-const channel = member.guild.channels.find(ch => ch.name === `sohbet`);
-if (!channel) return; 
-channel.send(` ${member}   aramızdan ayrıldı! :slight_frown:  **${deger}** kişi olmamıza  **${sayac}**  kişi kaldı !     `);
-   	 	});
-	});
-});
+
 
 bot.on('message', message => {
     let msg = message.content.toUpperCase(); // This variable takes the message, and turns it all into uppercase so it isn't case sensitive.
