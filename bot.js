@@ -48,6 +48,8 @@ bot.on('guildMemberAdd', member => {
   const channel = member.guild.channels.find(ch => ch.name === 'hoş-geldiniz-🎀');
   if (!channel) return;
   channel.send(`Discord sunucumuza hoş geldin. Sunucudaki diğer odaları görebilmek için <#440947896280416276> kanalından rollerini alabilirsin.  Ayrıca <#397696480988758017> kanalından sunucu kurallarını okumayı da unutma :slight_smile:  İyi eğlenceler :heart:   ${member}      `);
+
+bot.on('guildMemberAdd', member => {
 const channel = member.guild.channels.find(ch => ch.id === 254322308477353985);
   if (!channel) return;
   channel.send(`${member} sunucudan ayrıldı.`);
