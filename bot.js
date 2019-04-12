@@ -55,11 +55,11 @@ const channel = member.guild.channels.find(ch => ch.id === 254322308477353985);
   channel.send(`${member} sunucudan ayrıldı.`);
 }); */
 
-bot.on('guildMemberAdd', member => {
-   member.send(' Discord sunucumuza hoşgeldin. Sunucudaki diğer odaları görebilmek için #rol-secimi kanalından rollerini alabilirsin.  Ayrıca #linkler⭐ kanalından sunucu kurallarını okumayı da unutma :slight_smile:  İyi eğlenceler :heart: ');
+/*bot.on('guildMemberAdd', member => {
+   member.send(' Discord sunucumuza hoşgeldin. Sunucudaki diğer odaları görebilmek için #rol-secimi kanalından rollerini alabilirsin.  Ayrıca #linkler kanalından sunucu kurallarını okumayı da unutma :slight_smile:  İyi eğlenceler :heart: ');
 });
 
-/*bot.on('guildMemberRemove', member => {
+bot.on('guildMemberRemove', member => {
    member.send(' Aramızdan ayrılmana çok üzüldük :slight_frown:  Yeniden aramıza katılmak istersen linkimizi şuraya bırakıyorum : https://discord.gg/KmaDCht   ');
 }); */
 
