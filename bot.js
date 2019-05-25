@@ -30,7 +30,7 @@ bot.on('message', message => {
 
 bot.on('message', message => {
   if (message.content === prefix + 'detay') {
-    message.reply('${bot.user.username} aktif olarak ' + bot.guilds.size +' sunucuda ' + bot.channels.size + ' Kanalda ' + bot.users.size + ' kişiye hizmet veriyor.');
+    message.reply(+bot.user.username+ ' aktif olarak ' + bot.guilds.size +' sunucuda ' + bot.channels.size + ' Kanalda ' + bot.users.size + ' kişiye hizmet veriyor.');
   }
 });
 
