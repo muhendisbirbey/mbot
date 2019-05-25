@@ -25,7 +25,7 @@ bot.on('message', message => {
 
 bot.on('message', message => {
   if (message.content === prefix + 'sistem') {
-    message.reply(' ``` SİSTEM ÖZELLİKLERİ\n İŞLEMCİ RYZEN 5 1400 3.4 Ghz \n RAM 8 GB DDR4 2666 Mhz \n ANAKART Gigabyte GA-A320M-DS2 \n EKRAN KARTI GALAX GTX 1060 6G \n DEPOLAMA SanDisk 120 gb SSD + 1 TB HDD \n MOUSE Logitech G300s \n KLAVYE Logitech G105 \n KULAKLIK Logitech G430 ``` ');}
+    message.reply(' ``` SİSTEM ÖZELLİKLERİ\n İŞLEMCİ RYZEN 5 1400 3.4 Ghz \n RAM 16 GB DDR4 3200 Mhz \n ANAKART Gigabyte GA-A320M-DS2 \n EKRAN KARTI GALAX GTX 1060 6G \n DEPOLAMA SanDisk 120 gb SSD + 1 TB HDD \n MOUSE Logitech G300s \n KLAVYE Logitech G105 \n KULAKLIK Logitech G430 ``` ');}
 });
 
 bot.on('message', message => {
@@ -71,10 +71,10 @@ bot.guilds.forEach((guild) => {
         g.members.forEach((member) => {
             count++;
         });
-	var deger = 500 ;
+	var deger = 100 ;
         var sayac = deger - count ;
 if( sayac < 0 ) {  
-while(sayac < 0){ deger = deger + 500; sayac = deger - count ; } }
+while(sayac < 0){ deger = deger + 100; sayac = deger - count ; } }
 console.log(`${deger} `);
 const channel = member.guild.channels.find(ch => ch.name === `sohbet`);
 if (!channel) return;
